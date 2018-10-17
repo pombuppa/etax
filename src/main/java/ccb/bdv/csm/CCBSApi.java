@@ -37,7 +37,7 @@ public class CCBSApi extends ResourceConfig {
     @POST
     @Path("/payment/")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Get data successfully ", response = String.class),
+            @ApiResponse(code = 200, message = "Get data successfully ", response = Result.class),
             @ApiResponse(code = 400, message = "Header data not match with configuration")
     })
     public Result payment(@HeaderParam(value="User") String User,
@@ -54,7 +54,7 @@ public class CCBSApi extends ResourceConfig {
     @POST
     @Path("/refund/")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Get data successfully ", response = String.class),
+            @ApiResponse(code = 200, message = "Get data successfully ", response = Result.class),
             @ApiResponse(code = 400, message = "Header data not match with configuration")
     })
     public Result refund(@HeaderParam(value="User") String User,
