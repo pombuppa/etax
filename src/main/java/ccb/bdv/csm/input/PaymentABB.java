@@ -2,13 +2,13 @@ package ccb.bdv.csm.input;
 
 import io.swagger.annotations.ApiModel;
 
-@ApiModel(value = "PaymentABB")
+//@ApiModel(value = "PaymentABB")
 public class PaymentABB {
     public String DocumentName;
     public String TypeCode;
     
     public Seller Seller;
-    public Seller Buyver;
+    public Seller Buyer;
 
     public String DepositDate;
     public String ReceiptNumber;
@@ -25,7 +25,7 @@ public class PaymentABB {
     public String PaymentAmount;
     public String WHTRate;
     public String WHTAmount;
-    public String WHTtotalamount;
+    public String WHTTotalAmount;
     
     public ETaxMedia EtaxInfo[];
     

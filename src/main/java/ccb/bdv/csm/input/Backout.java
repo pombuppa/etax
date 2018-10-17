@@ -8,7 +8,7 @@ public class Backout {
     public String TypeCode;
 
     public Seller Seller;
-    public Seller Buyver;
+    public Seller Buyer;
 
     public String DepositDate;
     public String ReceiptNumber;
@@ -25,7 +25,7 @@ public class Backout {
     public String PaymentAmount;
     public String WHTRate;
     public String WHTAmount;
-    public String WHTtotalamount;
+    public String WHTTotalAmount;
     public ETaxMedia EtaxInfo[];
     public String PaymentSource;
     public String Password;

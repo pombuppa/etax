@@ -2,9 +2,7 @@ package ccb.bdv.csm;
 
 
 import ccb.bdv.csm.input.*;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.Tag;
+import io.swagger.annotations.*;
 import org.glassfish.jersey.server.ResourceConfig;
 
 import javax.ws.rs.*;
@@ -24,28 +22,49 @@ public class CCBSApi extends ResourceConfig {
     public CCBSApi() {
         register(GsonProvider.class);
     }
+
+    @POST
+    @Path("/Authorization/")
+    @Produces(value="text/plain; charset=utf-8")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Get data successfully ", response = String.class),
+            @ApiResponse(code = 401, message = "Username or password or Token incorrect ")
+    })
+    public String login(Login input) {
+        return "AadeUHOH/K0WSB/JG7F7UKGMYKhb2uVF1zp9b/BlHuI+kamFCWYtZGeWrGcwcfEav9tQX6UiLYVbsqmz3NLEg DAHK5dtYm6HdZnqsQLGTHckMCMKmwXj6jUhQoVBMa/p447hbHkXnxK05yUuixOlGDWN4H5AOUCKiGoeJ2BjVes=";
+    }
+
+    @POST
+    @Path("/payment/")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Get data successfully ", response = String.class),
+            @ApiResponse(code = 400, message = "Header data not match with configuration")
+    })
+    public Result payment(@HeaderParam(value="User") String User,
+                          @HeaderParam(value="Password") String Password,
+                          @HeaderParam(value="Token") String Token,
+                          @HeaderParam(value="SellerTaxId") String SellerTaxId,
+                          @HeaderParam(value="JobType") String JobType,
+                          @HeaderParam(value="TranType") String TranType,
+                          @HeaderParam(value="DocType") String DocType,
+                          PaymentFull input) {
+        return new Result();
+    }
     
     @POST
-    @Path("/payment-full/")
-    public Result paymentFull(PaymentFull input) {
-        return new Result();
-    }
-
-    @POST
-    @Path("/payment-abb/")
-    public Result paymentAbb(PaymentABB input) {
-        return new Result();
-    }
-
-    @POST
-    @Path("/backout/")
-    public Result backout(Backout input) {
-        return new Result();
-    }
-
-    @POST
     @Path("/refund/")
-    public Result refund(Refund input) {
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Get data successfully ", response = String.class),
+            @ApiResponse(code = 400, message = "Header data not match with configuration")
+    })
+    public Result refund(@HeaderParam(value="User") String User,
+                         @HeaderParam(value="Password") String Password,
+                         @HeaderParam(value="Token") String Token,
+                         @HeaderParam(value="SellerTaxId") String SellerTaxId,
+                         @HeaderParam(value="JobType") String JobType,
+                         @HeaderParam(value="TranType") String TranType,
+                         @HeaderParam(value="DocType") String DocType,
+                         Refund input) {
         return new Result();
     }
     

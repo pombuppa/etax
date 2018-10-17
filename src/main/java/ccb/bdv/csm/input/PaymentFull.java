@@ -1,38 +1,110 @@
 package ccb.bdv.csm.input;
 
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel(value = "PaymentFull")
+import java.util.Date;
+
+@ApiModel(value = "Payment")
 public class PaymentFull {
-    public String DocumentName;
-    public String TypeCode;
 
-    public Seller Seller;
-    public Seller Buyver;
+    @ApiModelProperty(value="Name of doument", example="ใบเสร็จรับเงิน/ใบกำกับภาษี") public String DocumentName;
+    @ApiModelProperty(value="Document type"  , example="" )                     public String TypeCode;
+    @ApiModelProperty(value="", example="") public Seller Seller;
+    @ApiModelProperty(value="", example="") public Buyer Buyer;
 
-    public String DepositDate;
-    public String ReceiptNumber;
-    public String AccountNumber;
-    public String PRIM_Resource_VAL;
-    public String PaymentSourceDescription;
-    public String CreditCard_BankAccountNumber;
-    public String BillMonth;
-    public String BeforeVatAmount;
-    public String DiscountAmount;
-    public String AfterDiscountAmount;
-    public String TotalAmount;
-    public String VatAmount;
-    public String PaymentAmount;
-    public String WHTRate;
-    public String WHTAmount;
-    public String WHTtotalamount;
-    
-    public ETaxMedia EtaxInfo[];
-    
-    public String PaymentSource;
-    public String Password;
-    public String PrintIndicator;
-    public String ReasonCode;
-    public String NumberOfRegenerate;
+    @ApiModelProperty(value="Tax Invoice date will be shown on receipt  by E-Tax system, will be populated with:\n" +
+            "Original Deposit date -  In case of Payment/Backout/Fund transfer from & to/Reissue ABB to Full form\n" +
+            "Else Activity date \n"  , example="" )                     public String DepositDate;
+    @ApiModelProperty(value="RT id will copy from original in case of ECA payment create before apply E-tax\n" +
+            "Payment date in RT ID will be from deposit date in E-Tax request record\n" +
+            "\n" +
+            "Re-issue always created new RT excepte case of fund transfer from ECA (payment created before apply E-tax) to regular", example="") public String ReceiptNumber;
+    @ApiModelProperty(value="", example="") public String AccountNumber;
+    @ApiModelProperty(value="", example="") public String PrimResourceVal;
+    @ApiModelProperty(value="", example="") public String PaymentSourceDescription;
+    @ApiModelProperty(value="Bank account number/Credit card number", example="") public String CreditCardBankAccountNumber;
+    @ApiModelProperty(value="Bill month\n" +
+            "Note: \n" +
+            "- To send this value to core e tax system with multiple value\n" +
+            "- The value should be support as current format of bill month of\n" +
+            "1.Billing invoice\n" +
+            "2. Deposit\n" +
+            "3. Immediate charge\n" +
+            "4. Unapply", example="") public String BillMonth;
+    @ApiModelProperty(value="Payment amount exclude Vat with two decimal\n" +
+            "Note: To send this value to core e tax system with multiple value", example="") public String BeforeVatAmount;
+    @ApiModelProperty(value="Discount amount with two decimal\n" +
+            "Note: To send this value to core e tax system with multiple value", example="") public String DiscountAmount;
+    @ApiModelProperty(value="Payment amount exclude Vat after discount with two decimal\n" +
+            "Note: To send this value to core e tax system with multiple value", example="") public String AfterDiscountAmount;
+    @ApiModelProperty(value="Total payment amount exclude Vat with two decimal", example="") public String TotalAmount;
+    @ApiModelProperty(value="Vat amount with two decimal", example="") public String VatAmount;
+    @ApiModelProperty(value="Total payment amount include Vat with two decimal", example="") public String PaymentAmount;
+    @ApiModelProperty(value="WHT Rate\n" +
+            "Note: There are some account type having two WHT rate e.g. normal customer 5% for rental fee, 3% for service. Then this value should be sent to core etax system with multiple value", example="") public String WHTRate;
+    @ApiModelProperty(value="WHT Amount\n" +
+            "Note: There are some account type having two WHT rate e.g. normal customer 5% for rental fee, 3% for service. Then this value should be sent to core etax system with multiple value", example="") public String WHTAmount;
+    @ApiModelProperty(value="Total WHT amount", example="") public String WHTTotalAmount;
+    @ApiModelProperty(value="e Tax media e.g. 'E' - Email\n" +
+            "'S' - SMS\n" +
+            "'E' - Email and SMS\n" +
+            "'P' - Paper\n" +
+            "'O' - Other", example="") public String EtaxMedia;
+
+    @ApiModelProperty(value="Example :  \n" +
+            "MSISDN = ‘0987654321;0123456789’ \n" +
+            "Email  = ‘mail_id1@g= mail.com;mail_id2@gmail.com;mail_id3@gmail.com’ \n" +
+            "notification number = ‘1111111111;2222222222’ \n" +
+            "\n" +
+            "{ \n" +
+            "\t\"type\": \"ES\" \n" +
+            "\t\"msisdn\": \"987654321\" \n" +
+            "} \n" +
+            "{\n" +
+            "\t\"type\": \"ES\" \n" +
+            "\t\"msisdn\": \"123456789\" \n" +
+            "} \n" +
+            "{\n" +
+            "\t\"type\": \"ES\" \n" +
+            "\t\"email\": \"mail_id1@gmail.com\" \n" +
+            "} \n" +
+            "{\n" +
+            "\t\"type\": \"ES\" \n" +
+            "\t\"email\": \"mail_id2@gmail.com\" \n" +
+            "} \n\"" +
+            "} \n" +
+            "{\n" +
+            "\t\"type\": \"ES\" \n" +
+            "\t\"email\": \"mail_id3@gmail.com\" \n" +
+            "} \n" +
+            "{\n" +
+            "\t\"type\": \"ES\" \n" +
+            "\t\"notificationNumber\": \"1111111111\" \n" +
+            "} \n" +
+            "{\n" +
+            "\t\"type\": \"ES\" \n" +
+            "\t\"notificationNumber\": \"2222222222\" \n" +
+            "} ", example="") public ETaxMedia EtaxInfo[];
+
+    @ApiModelProperty(value="", example="") public String DeliveryMethod;
+    @ApiModelProperty(value="", example="") public String Password;
+    @ApiModelProperty(value="", example="") public char   PrintIndicator;
+    @ApiModelProperty(value="", example="") public String ReasonCode;
+
+    @ApiModelProperty(value="", example="") public String OriginalReceiptNo;
+    @ApiModelProperty(value="", example="") public Date ActivityDate;
+    @ApiModelProperty(value="", example="") public String ActivityCode;
+    @ApiModelProperty(value="", example="") public Date OriginalDepositDate;
+
+    @ApiModelProperty(value="", example="") public char CancelIndicator;
+    @ApiModelProperty(value="", example="") public char GovExtractIndicator;
+    @ApiModelProperty(value="", example="") public String DocumentLanguage;
+    @ApiModelProperty(value="", example="") public String CustomerType;
+    @ApiModelProperty(value="", example="") public String IdentificationType;
+    @ApiModelProperty(value="", example="") public String Identification;
+    @ApiModelProperty(value="", example="") public Date BirthDate;
+
+    @ApiModelProperty(value="", example="") public MailingAddress mailingAddress;
 
 }

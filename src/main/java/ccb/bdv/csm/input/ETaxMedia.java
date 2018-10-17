@@ -6,5 +6,6 @@ import io.swagger.annotations.ApiModel;
 public class ETaxMedia {
      public String       Type;
      public String       email;
-     public String       msisd;
+     public String       msisdn;
+     public String       notificationNumber;
 }

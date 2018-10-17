@@ -2,12 +2,9 @@ package ccb.bdv.csm.input;
 
 import io.swagger.annotations.ApiModel;
 
-@ApiModel(value = "Seller")
-public class Seller {
-     public String       SellerName;
-     public String       BranchNo;
-     public String       SellerTaxId;
-     //public String       PostalTradeAddress;
+@ApiModel(value = "MailingAddress")
+public class MailingAddress {
+     public String       Name;
      public String       BuildingNumber;
      public String       BuildingName;
      public String       Moo;

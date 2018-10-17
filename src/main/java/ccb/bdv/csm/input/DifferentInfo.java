@@ -3,8 +3,8 @@ package ccb.bdv.csm.input;
 import io.swagger.annotations.ApiModel;
 
 @ApiModel(value = "CorrectAmount")
-public class CorrectAmount {
+public class DifferentInfo {
      public String       Amount;
-     public String       Vat;
-     public String       Total;
+     public String       VatAmount;
+     public String       TotalAmount;
 }
