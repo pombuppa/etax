@@ -55,7 +55,7 @@ public class RESTServer {
         String endpoint = System.getProperty("END_POINT", "http://" + host + ":" + port + "/etax");
         
         swaggerServlet.setInitParameter("swagger.api.basepath", endpoint);
-        swaggerServlet.setInitParameter("api.version", "1.0.1");
+        swaggerServlet.setInitParameter("api.version", "1.0.2");
         swaggerServlet.setInitParameter("swagger.api.title", "eTax Mock");
 
         String resourceBasePath = this.getClass().getResource("/webapp").toExternalForm();
