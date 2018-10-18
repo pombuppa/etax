@@ -61,7 +61,7 @@ public class Refund {
 
     @ApiModelProperty(value="", example="") public String DeliveryMethod;
     @ApiModelProperty(value="", example="") public String Password;
-    @ApiModelProperty(value="", example="") public char   PrintIndicator;
+    @ApiModelProperty(value="", example="") public String   PrintIndicator;
     @ApiModelProperty(value="", example="") public String ActivityCode;
 
     @ApiModelProperty(value="", example="") public String CancelIndicator;

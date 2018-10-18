@@ -89,7 +89,7 @@ public class PaymentFull {
 
     @ApiModelProperty(value="", example="") public String DeliveryMethod;
     @ApiModelProperty(value="", example="") public String Password;
-    @ApiModelProperty(value="", example="") public char   PrintIndicator;
+    @ApiModelProperty(value="", example="") public String   PrintIndicator;
     @ApiModelProperty(value="", example="") public String ReasonCode;
 
     @ApiModelProperty(value="", example="") public String OriginalReceiptNo;
@@ -97,8 +97,8 @@ public class PaymentFull {
     @ApiModelProperty(value="", example="") public String ActivityCode;
     @ApiModelProperty(value="", example="") public Date OriginalDepositDate;
 
-    @ApiModelProperty(value="", example="") public char CancelIndicator;
-    @ApiModelProperty(value="", example="") public char GovExtractIndicator;
+    @ApiModelProperty(value="", example="") public String CancelIndicator;
+    @ApiModelProperty(value="", example="") public String GovExtractIndicator;
     @ApiModelProperty(value="", example="") public String DocumentLanguage;
     @ApiModelProperty(value="", example="") public String CustomerType;
     @ApiModelProperty(value="", example="") public String IdentificationType;
