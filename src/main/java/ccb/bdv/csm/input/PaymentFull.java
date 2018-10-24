@@ -24,20 +24,7 @@ public class PaymentFull {
     @ApiModelProperty(value="", example="") public String PrimResourceVal;
     @ApiModelProperty(value="", example="") public String PaymentSourceDescription;
     @ApiModelProperty(value="Bank account number/Credit card number", example="") public String CreditCardBankAccountNumber;
-    @ApiModelProperty(value="Bill month\n" +
-            "Note: \n" +
-            "- To send this value to core e tax system with multiple value\n" +
-            "- The value should be support as current format of bill month of\n" +
-            "1.Billing invoice\n" +
-            "2. Deposit\n" +
-            "3. Immediate charge\n" +
-            "4. Unapply", example="") public String BillMonth;
-    @ApiModelProperty(value="Payment amount exclude Vat with two decimal\n" +
-            "Note: To send this value to core e tax system with multiple value", example="") public String BeforeVatAmount;
-    @ApiModelProperty(value="Discount amount with two decimal\n" +
-            "Note: To send this value to core e tax system with multiple value", example="") public String DiscountAmount;
-    @ApiModelProperty(value="Payment amount exclude Vat after discount with two decimal\n" +
-            "Note: To send this value to core e tax system with multiple value", example="") public String AfterDiscountAmount;
+    @ApiModelProperty(value="List of Bill months", example="") public BillMonth BillMonths[];
     @ApiModelProperty(value="Total payment amount exclude Vat with two decimal", example="") public String TotalAmount;
     @ApiModelProperty(value="Vat amount with two decimal", example="") public String VatAmount;
     @ApiModelProperty(value="Total payment amount include Vat with two decimal", example="") public String PaymentAmount;

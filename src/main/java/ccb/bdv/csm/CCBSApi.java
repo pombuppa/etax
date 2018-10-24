@@ -25,7 +25,8 @@ public class CCBSApi extends ResourceConfig {
 
     @POST
     @Path("/Authorization/")
-    @Produces(value="text/plain; charset=utf-8")
+    @Produces(value="text/plain")
+    @Consumes(value="application/json")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Get data successfully ", response = String.class),
             @ApiResponse(code = 401, message = "Username or password or Token incorrect ")
