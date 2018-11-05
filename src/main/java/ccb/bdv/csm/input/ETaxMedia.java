@@ -4,8 +4,8 @@ import io.swagger.annotations.ApiModel;
 
 @ApiModel(value = "ETaxMedai")
 public class ETaxMedia {
-     public String       Type;
-     public String       email;
-     public String       msisdn;
-     public String       notificationNumber;
+     public String type;
+     public String email;
+     public String msisdn;
+     public String notificationnumber;
 }

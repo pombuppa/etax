@@ -48,7 +48,7 @@ public class CCBSApi extends ResourceConfig {
                           @HeaderParam(value="JobType") String JobType,
                           @HeaderParam(value="TranType") String TranType,
                           @HeaderParam(value="DocType") String DocType,
-                          PaymentFull input) {
+                          Payment input) {
         return new Result();
     }
     

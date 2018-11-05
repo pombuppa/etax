@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
 
 @ApiModel(value = "Payment")
-public class PaymentFull {
+public class Payment {
 
     @ApiModelProperty(value="Name of doument", example="ใบเสร็จรับเงิน/ใบกำกับภาษี") public String DocumentName;
     @ApiModelProperty(value="Document type"  , example="" )                     public String TypeCode;
@@ -24,7 +24,7 @@ public class PaymentFull {
     @ApiModelProperty(value="", example="") public String PrimResourceVal;
     @ApiModelProperty(value="", example="") public String PaymentSourceDescription;
     @ApiModelProperty(value="Bank account number/Credit card number", example="") public String CreditCardBankAccountNumber;
-    @ApiModelProperty(value="List of Bill months", example="") public BillMonth BillMonths[];
+    @ApiModelProperty(value="List of Bill months", example="") public BillMonth BillMonthInfo[];
     @ApiModelProperty(value="Total payment amount exclude Vat with two decimal", example="") public String TotalAmount;
     @ApiModelProperty(value="Vat amount with two decimal", example="") public String VatAmount;
     @ApiModelProperty(value="Total payment amount include Vat with two decimal", example="") public String PaymentAmount;
@@ -76,7 +76,7 @@ public class PaymentFull {
 
     @ApiModelProperty(value="", example="") public String DeliveryMethod;
     @ApiModelProperty(value="", example="") public String Password;
-    @ApiModelProperty(value="", example="") public String   PrintIndicator;
+    @ApiModelProperty(value="", example="") public String PrintIndicator;
     @ApiModelProperty(value="", example="") public String ReasonCode;
 
     @ApiModelProperty(value="", example="") public String OriginalReceiptNo;
@@ -90,8 +90,8 @@ public class PaymentFull {
     @ApiModelProperty(value="", example="") public String CustomerType;
     @ApiModelProperty(value="", example="") public String IdentificationType;
     @ApiModelProperty(value="", example="") public String Identification;
-    @ApiModelProperty(value="", example="") public Date BirthDate;
+    @ApiModelProperty(value="", example="1980-12-31") public String BirthDate;
 
-    @ApiModelProperty(value="", example="") public MailingAddress mailingAddress;
+    @ApiModelProperty(value="", example="") public MailingAddress MailingAddress;
 
 }
