@@ -30,8 +30,10 @@ public class RESTServer {
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
 
+        String herokoPort = System.getenv("PORT");
+
         String host = System.getProperty("CUSTOM_HOST", "0.0.0.0");
-        String port = System.getProperty("CUSTOM_PORT", "8080");
+        String port = System.getProperty("CUSTOM_PORT", (herokoPort != null)? herokoPort:"8080");
 
         Server jettyServer = new Server();
         Connector connector = new SelectChannelConnector();
