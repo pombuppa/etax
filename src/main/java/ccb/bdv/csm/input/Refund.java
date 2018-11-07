@@ -75,7 +75,7 @@ public class Refund {
     @ApiModelProperty(value="", example="") public String CustomerType;
     @ApiModelProperty(value="", example="") public String IdentificationType;
     @ApiModelProperty(value="", example="") public String Identification;
-    @ApiModelProperty(value="", example="") public String BirthDate;
+    @ApiModelProperty(value="Birth Date in DDMMYYYY format", example="31121980") public String BirthDate;
 
     @ApiModelProperty(value="", example="") public MailingAddress MailingAddress;
 }

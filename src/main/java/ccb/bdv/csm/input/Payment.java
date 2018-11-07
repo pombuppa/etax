@@ -80,9 +80,9 @@ public class Payment {
     @ApiModelProperty(value="", example="") public String ReasonCode;
 
     @ApiModelProperty(value="", example="") public String OriginalReceiptNo;
-    @ApiModelProperty(value="", example="") public Date ActivityDate;
+    @ApiModelProperty(value="Activity Date in DDMMYYYY format", example="31122018") public String ActivityDate;
     @ApiModelProperty(value="", example="") public String ActivityCode;
-    @ApiModelProperty(value="", example="") public Date OriginalDepositDate;
+    @ApiModelProperty(value="Original Deposit Date in DDMMYYYY format", example="31122018") public String OriginalDepositDate;
 
     @ApiModelProperty(value="", example="") public String CancelIndicator;
     @ApiModelProperty(value="", example="") public String GovExtractIndicator;
@@ -90,7 +90,7 @@ public class Payment {
     @ApiModelProperty(value="", example="") public String CustomerType;
     @ApiModelProperty(value="", example="") public String IdentificationType;
     @ApiModelProperty(value="", example="") public String Identification;
-    @ApiModelProperty(value="", example="1980-12-31") public String BirthDate;
+    @ApiModelProperty(value="Birth Date in DDMMYYYY format", example="31121980") public String BirthDate;
 
     @ApiModelProperty(value="", example="") public MailingAddress MailingAddress;
 
