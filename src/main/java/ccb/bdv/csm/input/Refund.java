@@ -9,12 +9,13 @@ import java.util.Date;
 public class Refund {
     @ApiModelProperty(value="Name of doument", example="ใบเสร็จรับเงิน/ใบกำกับภาษี") public String DocumentName;
     @ApiModelProperty(value="Document type"  , example="" )                     public String TypeCode;
+    
+    @ApiModelProperty(value="", example="") public Seller Seller;
 
-    @ApiModelProperty(value="", example="") public Date ActivityDate;
+    @ApiModelProperty(value="Activity Date in DDMMYYYY format", example="31122018") public String ActivityDate;
     public String AccountNumber;
     public String SubscriberInfo;
 
-    @ApiModelProperty(value="", example="") public Seller Seller;
     @ApiModelProperty(value="", example="") public Buyer Buyer;
 
     public String  OriginalReceiptNumber;

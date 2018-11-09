@@ -28,10 +28,7 @@ public class Payment {
     @ApiModelProperty(value="Total payment amount exclude Vat with two decimal", example="") public String TotalAmount;
     @ApiModelProperty(value="Vat amount with two decimal", example="") public String VatAmount;
     @ApiModelProperty(value="Total payment amount include Vat with two decimal", example="") public String PaymentAmount;
-    @ApiModelProperty(value="WHT Rate\n" +
-            "Note: There are some account type having two WHT rate e.g. normal customer 5% for rental fee, 3% for service. Then this value should be sent to core etax system with multiple value", example="") public String WHTRate;
-    @ApiModelProperty(value="WHT Amount\n" +
-            "Note: There are some account type having two WHT rate e.g. normal customer 5% for rental fee, 3% for service. Then this value should be sent to core etax system with multiple value", example="") public String WHTAmount;
+    public WHTRateInfo[] WHTRateInfo;
     @ApiModelProperty(value="Total WHT amount", example="") public String WHTTotalAmount;
     @ApiModelProperty(value="e Tax media e.g. 'E' - Email\n" +
             "'S' - SMS\n" +
